@@ -1,0 +1,55 @@
+{
+  "name": "@nexoe/quill",
+  "version": "0.1.0",
+  "description": "A quick, keyboard-driven note-taking TUI",
+  "type": "module",
+  "bin": {
+    "quill": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "tui",
+    "notes",
+    "note-taking",
+    "ink",
+    "terminal"
+  ],
+  "license": "MIT",
+  "author": "rfn <rfn@pantherapplications.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexoe/quill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nexoe/quill/issues"
+  },
+  "homepage": "https://github.com/nexoe/quill#readme",
+  "scripts": {
+    "dev": "tsx src/cli.tsx",
+    "build": "esbuild src/cli.tsx --bundle --platform=node --format=esm --packages=external --outfile=dist/cli.js --banner:js='#!/usr/bin/env node' && chmod +x dist/cli.js",
+    "start": "node dist/cli.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "ink": "^5.1.0",
+    "ink-text-input": "^6.0.0",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "@types/react": "^18.3.12",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
