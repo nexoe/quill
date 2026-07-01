@@ -112,16 +112,3 @@ nothing is lost.
 - A note's title is its first non-empty line.
 - Editing hands the terminal to your configured editor, so you get your real
   editor for the note body.
-
-## Develop
-
-To hack on quill itself:
-
-```sh
-git clone https://github.com/nexoe/quill.git
-cd quill
-npm install
-
-npm run dev                  # run straight from source
-npm run build && npm link    # build and put `quill` on your PATH
-```
