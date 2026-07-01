@@ -7,16 +7,22 @@ Built with [Ink](https://github.com/vadimdemedes/ink) (React for the CLI).
 
 ## Install
 
+Requires [Node.js](https://nodejs.org) 18 or newer. Install it globally:
+
 ```sh
-npm install
-npm run build   # produces ./dist/cli.js
-npm link        # makes `quill` available on your PATH
+npm install -g @nexoe/quill
 ```
 
-Or just run it in dev without building:
+Then launch it from anywhere:
 
 ```sh
-npm run dev
+quill
+```
+
+Or run it once, without installing:
+
+```sh
+npx @nexoe/quill
 ```
 
 ## Keys
@@ -67,3 +73,16 @@ For GUI editors, remember the wait flag, e.g. `code -w` or `subl -w`.
 - A note's title is its first non-empty line.
 - Editing hands the terminal to your configured editor, so you get your real
   editor for the note body.
+
+## Develop
+
+To hack on quill itself:
+
+```sh
+git clone https://github.com/nexoe/quill.git
+cd quill
+npm install
+
+npm run dev                  # run straight from source
+npm run build && npm link    # build and put `quill` on your PATH
+```
