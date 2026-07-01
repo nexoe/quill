@@ -207,7 +207,7 @@ const App = () => {
       >
         <Box flexDirection="column">
           <Text color="magenta" bold>
-            ✒ New note
+            New note
           </Text>
           <Box marginTop={1}>
             <Text>Title: </Text>
@@ -244,11 +244,12 @@ const App = () => {
           </Box>
         )}
         <Box>
-          <Text color="magenta" bold>
-            ✒ quill
-          </Text>
+          {!showLogo && (
+            <Text color="magenta" bold>
+              quill{'  '}
+            </Text>
+          )}
           <Text dimColor>
-            {'  '}
             {query ? `filtering “${query}”` : `sorted by ${sortLabel}`}
             {visible.length > 0 ? ` · ${index + 1}/${visible.length}` : ''}
           </Text>

@@ -1,9 +1,29 @@
-# ✒ quill
+# quill
+
+```
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⣶⣿⣿⠿⣿⣿⣿⡿⠋⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⠀⣿⣿⣿⠿⠛⣩⣶⠟⠛⠛⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⣿⡾⠋⢁⣴⣾⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⡿⠋⢀⣴⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⡿⠋⢀⣴⣛⠛⠛⠛⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠙⠻⢿⣿⣿⡿⠁⣴⣿⣿⣿⣿⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣤⣴⣶⣶⣦⣽⡿⢁⣼⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣼⣿⣿⣿⣿⣿⣿⢣⣾⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⠛⠿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠉⠁⠀⠀⠀⠉⣿⡿⠁⠀⠀⠀⠀⠈⠀ ______     __  __     __     __         __
+⠀⠀⠀⠀⠀⠀⢠⣿⠃⠀⠀⠀⠀⠀⠀ /\  __ \   /\ \/\ \   /\ \   /\ \       /\ \
+⠀⠀⠀⠀⠀⢀⣾⡿⠀⠀⠀⠀⠀⠀⠀⠀\ \ \/\_\  \ \ \_\ \  \ \ \  \ \ \____  \ \ \____
+⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀\ \___\_\  \ \_____\  \ \_\  \ \_____\  \ \_____\
+⠀⠀⠀⠀⠺⠿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀  \/___/_/   \/_____/   \/_/   \/_____/   \/_____/
+```
 
 A quick, keyboard-driven note-taking TUI. Browse, create, edit, and delete
 plain-markdown notes without leaving the terminal.
 
 Built with [Ink](https://github.com/vadimdemedes/ink) (React for the CLI).
+
+![quill in action](https://raw.githubusercontent.com/nexoe/quill/main/demo/quill.gif)
 
 ## Install
 
@@ -63,6 +83,25 @@ the config file:
 | Notes dir| `$QUILL_DIR` → config → `~/.quill/notes`             |
 
 For GUI editors, remember the wait flag, e.g. `code -w` or `subl -w`.
+
+## Syncing your notes
+
+Notes are just plain `.md` files in a single folder, so quill doesn't need any
+sync logic of its own. You have two easy options:
+
+**Keep it local (default).** Notes stay in `~/.quill/notes` on this machine.
+Nothing leaves your computer — the simplest, most private option.
+
+**Back up / sync with Dropbox, Google Drive, iCloud, etc.** These apps let you
+choose which folders they sync from their settings. Open your sync app's
+preferences and add quill's notes folder (`~/.quill/notes`) to the list of
+synced folders — or set quill's notes directory (via `quill config`) to a folder
+that's already inside your synced drive. Either way, every note you save is
+backed up and shows up on your other machines automatically.
+
+Because notes are individual markdown files, conflicts are rare — and if two
+devices edit the *same* note while offline, your sync app keeps both copies so
+nothing is lost.
 
 ## How it works
 

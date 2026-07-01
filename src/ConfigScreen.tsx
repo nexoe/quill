@@ -41,7 +41,7 @@ export const ConfigScreen = ({ onDone }: { onDone: () => void }) => {
   return (
     <Box flexDirection="column" padding={1}>
       <Text color="magenta" bold>
-        ✒ quill · config
+        quill · config
       </Text>
 
       <Box marginTop={1} flexDirection="column">

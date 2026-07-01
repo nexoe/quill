@@ -35,6 +35,7 @@
     "build": "esbuild src/cli.tsx --bundle --platform=node --format=esm --packages=external --outfile=dist/cli.js --banner:js='#!/usr/bin/env node' && chmod +x dist/cli.js",
     "start": "node dist/cli.js",
     "typecheck": "tsc --noEmit",
+    "demo": "npm run build && vhs demo/quill.tape",
     "prepublishOnly": "npm run typecheck && npm run build"
   },
   "publishConfig": {
